@@ -1,0 +1,36 @@
+;
+;	File 'topol_Other.itp' was generated
+;	By user: lab211 (1000)
+;	On host: lab211-MS-7E41
+;	At date: Sat Feb 21 13:17:35 2026
+
+;
+;	This is a include topology file
+;
+;	Created by:
+;	                    :-) GROMACS - gmx pdb2gmx, 2016.3 (-:
+;	
+;	Executable:   /home/lab211/桌面/GMX/gromacs/bin/gmx
+;	Data prefix:  /home/lab211/桌面/GMX/gromacs
+;	Working dir:  /home/lab211/桌面/RdRp/mn
+;	Command line:
+;	  gmx pdb2gmx -f protein.pdb -o protein_processed.gro -water spc -ignh
+;	Force field was read from current directory or a relative path - path added.
+;
+
+[ moleculetype ]
+; Name            nrexcl
+Other               3
+
+[ atoms ]
+;   nr       type  resnr residue  atom   cgnr     charge       mass  typeB    chargeB      massB
+; residue 1003 MN  rtp MN   q +2.0
+     1         MN   1003     MN     MN      1          2     54.938   ; qtot 2
+; residue 1004 MN  rtp MN   q +2.0
+     2         MN   1004     MN     MN      2          2     54.938   ; qtot 4
+
+; Include Position restraint file
+#ifdef POSRES
+#include "posre_Other.itp"
+#endif
+
